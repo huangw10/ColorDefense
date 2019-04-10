@@ -35,3 +35,9 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Rider
+.idea/
+
+# Mac
+.DS_Store
