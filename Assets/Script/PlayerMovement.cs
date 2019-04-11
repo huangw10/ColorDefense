@@ -7,16 +7,18 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private float moveSpeed;
+    private Rigidbody2D m_rigidbody;
 
-    void Start()
+    private void Awake()
     {
-        
+        m_rigidbody = this.GetComponent<Rigidbody2D>();
     }
+    
+  
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(0.0f, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime, 0.0f), Space.World);
-        transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0.0f, 0.0f), Space.World);
+        m_rigidbody.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxisRaw("Vertical") * moveSpeed);
     }
 }
