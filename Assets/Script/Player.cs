@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     private bool is_alive = true;
     public GameObject tomb;
+    private bool tomb_status = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,15 +22,22 @@ public class Player : MonoBehaviour
     {
         is_alive = true;
     }
+    public void set_tomb_status()
+    {
+        tomb_status = true;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            been_killed();
-            Debug.Log("Player died");
-            GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
-            this.gameObject.SetActive(false);
+            //    been_killed();
+            if (tomb_status)
+            {
+                Debug.Log("Player died");
+                GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
+                this.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -41,7 +49,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("hello");
         
     }
 }

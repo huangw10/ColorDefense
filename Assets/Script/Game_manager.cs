@@ -9,6 +9,7 @@ public class Game_manager : MonoBehaviour
     public UnityEvent revive;
     static public Game_manager instance;
     public GameObject player;
+    public GameObject[] playerlist;
 
     private void Awake()
     {
@@ -19,11 +20,14 @@ public class Game_manager : MonoBehaviour
     void revive_player()
     {
         player.SetActive(true);
+        player.GetComponent<Player>().set_tomb_status();
 
 
     }
     void Start()
     {
+        playerlist = GameObject.FindGameObjectsWithTag("Player");
+
         
     }
 

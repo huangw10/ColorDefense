@@ -7,9 +7,11 @@ public class Enemymanager : MonoBehaviour
 {
     static public Enemymanager instance;
     public UnityEvent EnemyDied;
-    [SerializeField]private int EnemyWave;
+    [SerializeField] private int EnemyWave;
     private int EnemyCount;
-    private int EnemyPoint = 6;
+    private int EnemyPointCount;
+    public GameObject Enemy_prefab;
+    public GameObject[] pointlist;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -18,10 +20,19 @@ public class Enemymanager : MonoBehaviour
 
     void Start()
     {
-        EnemyCount = EnemyPoint * EnemyWave;
+        EnemyPointCount = pointlist.Length;
+        EnemyCount = EnemyPointCount * EnemyWave;
         EnemyDied.AddListener(Enemybeenkilled);
+        IniEnemy();
     }
 
+    void IniEnemy()
+    {
+        for (int i = 0; i < EnemyPointCount; i++)
+        {
+            GameObject.Instantiate(Enemy_prefab, pointlist[i].transform.position, new Quaternion());
+        }
+    }
     void Enemybeenkilled()
     {
         EnemyCount--;
