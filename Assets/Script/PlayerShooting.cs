@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public bool CanShoot = true;
     public GameObject bullet;
     private float mouseAngle = 0;
     private Vector2 mouseDirection;
+    private Player my_status;
     // Start is called before the first frame update
     void Start()
     {
-        
+        my_status = this.GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (CanShoot)
+        if (my_status.check_alive())
         {
             if (Input.GetMouseButtonUp(0))
             {

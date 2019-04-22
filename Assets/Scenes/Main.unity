@@ -141,6 +141,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e86de34500767041ac7465ca628cb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyDied:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  EnemyWave: 0
 --- !u!4 &448272716
 Transform:
   m_ObjectHideFlags: 0
@@ -478,11 +484,12 @@ GameObject:
   - component: {fileID: 1247465721}
   - component: {fileID: 1247465720}
   - component: {fileID: 1247465722}
+  - component: {fileID: 1247465725}
   - component: {fileID: 1247465724}
   - component: {fileID: 1247465723}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: xyz
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -527,7 +534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26112e45329dfe14fbe5f2d6203ef7b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanShoot: 1
   bullet: {fileID: 7834836944190628449, guid: a300a82fee4e4b04c9936336f9eb080b, type: 3}
 --- !u!50 &1247465723
 Rigidbody2D:
@@ -576,6 +582,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64609575, y: 0.6242495}
   m_EdgeRadius: 0
+--- !u!114 &1247465725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247465719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6651e3a934feb4980de228d23accce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1898100083
 PrefabInstance:
   m_ObjectHideFlags: 0

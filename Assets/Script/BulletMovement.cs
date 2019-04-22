@@ -23,6 +23,12 @@ public class BulletMovement : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        if (collision.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+            Enemymanager.instance.EnemyDied.Invoke();
+        }
     }
 
     // Update is called once per frame
