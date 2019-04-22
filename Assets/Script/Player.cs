@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private bool is_alive = true;
+    public GameObject tomb;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             been_killed();
+            Debug.Log("Player died");
+            GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
             this.gameObject.SetActive(false);
         }
     }
@@ -38,6 +41,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("hello");
         
     }
 }
