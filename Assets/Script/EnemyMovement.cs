@@ -53,10 +53,12 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.collider.CompareTag("Wall"))
         {
+            avoid_time_count = 0f;
             is_walk = false;
-            Vector3 a = target.transform.position - this.transform.position;
-            e_rigid.velocity = new Vector3(a.y, a.x, a.z).normalized * speed * 3;
-            
+       //     Vector3 a = target.transform.position - this.transform.position;
+       //     e_rigid.velocity = new Vector3(a.y, a.x, a.z).normalized * speed * 3;
+            e_rigid.velocity = Quaternion.Euler(0f,0f,90f)* (target.transform.position - this.transform.position).normalized * speed * 3;
+
         }
     }
 
@@ -68,7 +70,7 @@ public class EnemyMovement : MonoBehaviour
         { FollowTarget(target); }
         else if (target != null && !is_walk)
         {
-            if (avoid_time_count <= 1.5f)
+            if (avoid_time_count <= 0.5f)
                 avoid_time_count += 1 * Time.deltaTime;
             else
             {

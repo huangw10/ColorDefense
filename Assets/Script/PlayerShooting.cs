@@ -25,6 +25,19 @@ public class PlayerShooting : MonoBehaviour
                 mouseAngle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
                 GameObject.Instantiate(bullet, this.transform.position, Quaternion.Euler(0.0f,0.0f,mouseAngle));
             }
+            if (Input.GetMouseButtonUp(1))
+            {
+                my_status.die();
+                GameObject.Instantiate(bullet, this.transform.position, Quaternion.Euler(0.0f, 0.0f, 0f));
+                GameObject.Instantiate(bullet, this.transform.position, Quaternion.Euler(0.0f, 0.0f, 45f));
+                GameObject.Instantiate(bullet, this.transform.position, Quaternion.Euler(0.0f, 0.0f, 90f));
+                GameObject.Instantiate(bullet, this.transform.position, Quaternion.Euler(0.0f, 0.0f, 135f));
+                GameObject.Instantiate(bullet, this.transform.position, Quaternion.Euler(0.0f, 0.0f, 180f));
+                GameObject.Instantiate(bullet, this.transform.position, Quaternion.Euler(0.0f, 0.0f, 225f));
+                GameObject.Instantiate(bullet, this.transform.position, Quaternion.Euler(0.0f, 0.0f, 270f));
+                GameObject.Instantiate(bullet, this.transform.position, Quaternion.Euler(0.0f, 0.0f, 315f));
+
+            }
         }
 
     }

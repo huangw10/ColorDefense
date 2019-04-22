@@ -27,17 +27,24 @@ public class Player : MonoBehaviour
         tomb_status = true;
     }
 
+    public void die()
+    {
+        if (tomb_status)
+        {
+
+            tomb_status = false;
+            Debug.Log("Player died");
+            GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
+            this.gameObject.SetActive(false);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             //    been_killed();
-            if (tomb_status)
-            {
-                Debug.Log("Player died");
-                GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
-                this.gameObject.SetActive(false);
-            }
+            die();
         }
     }
 
