@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26112e45329dfe14fbe5f2d6203ef7b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 959975842518476626, guid: 3d59e2b2bfeda814bbd708abe73f7d8e, type: 3}
 --- !u!114 &1940929532568755675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6651e3a934feb4980de228d23accce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tomb: {fileID: 0}
+  tomb: {fileID: 4506355733019769102, guid: 007de5691c9b7484daede5dc42c7f481, type: 3}
   revive_time: 2
 --- !u!114 &1567373646562606021
 MonoBehaviour:

@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6651e3a934feb4980de228d23accce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tomb: {fileID: 0}
+  tomb: {fileID: 8456165130119241061, guid: 70594913492b23144b5e06a7bca4b8ef, type: 3}
   revive_time: 2
 --- !u!114 &7716796069436878415
 MonoBehaviour:
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26112e45329dfe14fbe5f2d6203ef7b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 335103713587189678, guid: a583150ab04d54a4a9292d259ad36fa4, type: 3}
 --- !u!114 &6019396745766363899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

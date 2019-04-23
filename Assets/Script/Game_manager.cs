@@ -27,8 +27,8 @@ public class Game_manager : NetworkBehaviour
     }
     void Start()
     {
+        playerlist = GameObject.FindGameObjectsWithTag("Player");
 
-        
     }
 
     // Update is called once per frame

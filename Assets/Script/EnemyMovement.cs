@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D e_rigid;
     private bool is_walk = true;
     private float avoid_time_count = 0f;
+    public int identity;
     // Start is called before the first frame update
     private void Awake()
     {

@@ -43,7 +43,6 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("In revive zone");
         if (collision.CompareTag("Tomb"))
         {
             if (Input.GetKey(KeyCode.R))

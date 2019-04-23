@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class PlayerNetwork : NetworkBehaviour
 {
     // Start is called before the first frame update
-    public GameObject playerobject;
+    public GameObject[] playerobject;
     void Start()
     {
         if (!isLocalPlayer)
@@ -18,7 +18,8 @@ public class PlayerNetwork : NetworkBehaviour
     [Command]
     public void CmdSpawnplayer()
     {
-        GameObject player = Instantiate(playerobject);
+        int a = NetworkServer.connections.Count;//?????
+        GameObject player = Instantiate(playerobject[a-1]);//??????
         NetworkServer.Spawn(player);
         player.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
     }

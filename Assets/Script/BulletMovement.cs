@@ -6,6 +6,7 @@ public class BulletMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private float moveSpeed;
+    [SerializeField] public int identity;
     void Start()
     {
         
@@ -25,9 +26,13 @@ public class BulletMovement : MonoBehaviour
         }
         if (collision.tag == "Enemy")
         {
-            Destroy(collision.gameObject);
             Destroy(this.gameObject);
-            Enemymanager.instance.EnemyDied.Invoke();
+            if (collision.gameObject.GetComponent<EnemyMovement>().identity == this.identity)
+            {
+                Destroy(collision.gameObject);
+                Enemymanager.instance.EnemyDied.Invoke();
+
+            }
         }
     }
 

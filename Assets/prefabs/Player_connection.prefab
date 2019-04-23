@@ -77,5 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93dba088e7950fc488738a60dc54aeab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerobject: {fileID: 2942561629218340105, guid: 4d3a193a364c00e45a28b2fa75a2e658,
-    type: 3}
+  playerobject:
+  - {fileID: 2942561629218340105, guid: 4d3a193a364c00e45a28b2fa75a2e658, type: 3}
+  - {fileID: 1182134546689305717, guid: db879d7c43553d2448eafd104a7d4acd, type: 3}
+  - {fileID: 4668706024307186456, guid: 21288fb2d0157924581daa2eb76657da, type: 3}
+  - {fileID: 5515574191108888948, guid: c94e12780e8e37548805606bfa0cec79, type: 3}
