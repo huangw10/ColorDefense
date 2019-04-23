@@ -20,7 +20,7 @@ public class PlayerRotation : MonoBehaviour
       
             mouseDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             mouseAngle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
-            rotator = Quaternion.AngleAxis(mouseAngle, Vector3.forward);
+            rotator = Quaternion.Euler(0.0f, 0.0f, mouseAngle);
             transform.rotation = Quaternion.Slerp(transform.rotation,
                 rotator, rotationSpeed * Time.deltaTime);
      
