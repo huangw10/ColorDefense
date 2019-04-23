@@ -9,16 +9,17 @@ public class PlayerNetwork : NetworkBehaviour
     public GameObject playerobject;
     void Start()
     {
-        if (isLocalPlayer)
+        if (!isLocalPlayer)
         {
-            CmdSpawnplayer();
+            return;
         }
+        CmdSpawnplayer();
     }
     [Command]
     public void CmdSpawnplayer()
     {
         GameObject player = Instantiate(playerobject);
-        NetworkServer.Spawn(player);
+        NetworkServer.SpawnWithClientAuthority(player, connectionToClient);
     }
     // Update is called once per frame
     void Update()

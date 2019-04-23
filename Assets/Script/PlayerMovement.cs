@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 
 {
     // Start is called before the first frame update
     [SerializeField] private float moveSpeed;
     private Rigidbody2D m_rigidbody;
-    private Player m_status;
 
     private void Awake()
     {
+        if (hasAuthority == false)
+        {
+            return;
+        }
         m_rigidbody = this.GetComponent<Rigidbody2D>();
-        m_status = this.GetComponent<Player>();
     }
     
   
@@ -21,9 +24,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_status.check_alive())
+        if (hasAuthority == false)
         {
-            m_rigidbody.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxisRaw("Vertical") * moveSpeed);
+            return;
         }
+        
+            m_rigidbody.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxisRaw("Vertical") * moveSpeed);
     }
 }
