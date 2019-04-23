@@ -155,7 +155,7 @@ MonoBehaviour:
   - {fileID: 1351291458}
   - {fileID: 1093470766}
   - {fileID: 356226011}
-  timer: 20
+  timer: 0
   betweenWave: 0
 --- !u!4 &29528500
 Transform:

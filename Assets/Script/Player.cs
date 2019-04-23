@@ -101,6 +101,7 @@ public class Player : NetworkBehaviour
             CmdTombini();
             is_alive = false;
             this.gameObject.SetActive(false);
+            Rpcdie();
 
         }
     }
