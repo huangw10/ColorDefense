@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tomb: {fileID: 4652580832486849136, guid: a501882f2ec650942bc59fcf66a4a983, type: 3}
+  revive_time: 2
 --- !u!50 &2942561629218340101
 Rigidbody2D:
   serializedVersion: 4

@@ -8,9 +8,11 @@ public class PlayerShooting : NetworkBehaviour
     public GameObject bullet;
     private float mouseAngle = 0;
     private Vector2 mouseDirection;
+    private Player my_player;
     // Start is called before the first frame update
     void Start()
     {
+        my_player = this.GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class PlayerShooting : NetworkBehaviour
             }
             if (Input.GetMouseButtonUp(1))
             {
-                // my_status.die();
+                my_player.die();
                 CmdShoot(Quaternion.Euler(0.0f, 0.0f, 0f));
                 CmdShoot(Quaternion.Euler(0.0f, 0.0f, 45f));
                 CmdShoot(Quaternion.Euler(0.0f, 0.0f, 90f));

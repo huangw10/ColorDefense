@@ -11,10 +11,10 @@ public class tomb : MonoBehaviour
         
     }
 
-    private void OnMouseEnter()
+    public void revived()
     {
         Debug.Log("aaaaa!");
-        Game_manager.instance.revive.Invoke();
+        Player.SetActive(true);
         Destroy(this.gameObject);
     }
     // Update is called once per frame

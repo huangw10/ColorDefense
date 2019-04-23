@@ -7,10 +7,13 @@ public class Player : MonoBehaviour
     private bool is_alive = true;
     public GameObject tomb;
     private bool tomb_status = true;
+    private bool revive_people = false;
+    [SerializeField] float revive_time = 2.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public void been_killed()
@@ -38,6 +41,32 @@ public class Player : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log("In revive zone");
+        if (collision.CompareTag("Tomb"))
+        {
+            if (Input.GetKey(KeyCode.R))
+            {
+                Debug.Log("Reviving");
+                revive_time -= 1.0f * Time.deltaTime;
+
+            }
+            if (revive_time <= 0f)
+            {
+                collision.GetComponent<tomb>().revived();
+                revive_time = 2.0f;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Tomb"))
+        {
+            revive_time = 2.0f;
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -56,6 +85,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
