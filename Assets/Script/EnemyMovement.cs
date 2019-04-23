@@ -20,9 +20,15 @@ public class EnemyMovement : NetworkBehaviour
 
     private void Start()
     {
-        int num = NetworkManager.singleton.numPlayers;
-        identity = Random.Range(1, num + 1);
-        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = colorlist[identity-1];
+        if (isServer)
+        {
+            int num = NetworkManager.singleton.numPlayers;
+            int a = Random.Range(1, num + 1);
+
+            identity = a;
+            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = colorlist[identity - 1];
+            Rpcindentity(a);
+        }
     }
 
     GameObject decide_whotofollow(GameObject[] player_list)
@@ -87,5 +93,11 @@ public class EnemyMovement : NetworkBehaviour
         }
         else
         { }
+    }
+    [ClientRpc]
+    public void Rpcindentity(int a)
+    {
+        identity = a;
+        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = colorlist[identity - 1];
     }
 }
