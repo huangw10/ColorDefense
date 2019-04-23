@@ -37,17 +37,18 @@ public class Player : NetworkBehaviour
         {
             if (collision.CompareTag("Tomb"))
             {
-                if (Input.GetKey(KeyCode.R))
-                {
-                    Debug.Log("Reviving");
-                    revive_time -= 1.0f * Time.deltaTime;
+                //               if (Input.GetKey(KeyCode.R))
+                //            {
+                //               Debug.Log("Reviving");
+                //               revive_time -= 1.0f * Time.deltaTime;
 
-                }
-                if (revive_time <= 0f)
-                {
-                    collision.GetComponent<tomb>().Cmdrevived();
-                    revive_time = 2.0f;
-                }
+                //          }
+                //           if (revive_time <= 0f)
+                //           {
+                //              collision.GetComponent<tomb>().Cmdrevived();
+                //               revive_time = 2.0f;
+                //   }
+                collision.GetComponent<tomb>().Cmdrevived();
             }
         }
     }
