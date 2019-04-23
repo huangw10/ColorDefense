@@ -33,18 +33,21 @@ public class Player : NetworkBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Tomb"))
+        if (hasAuthority)
         {
-            if (Input.GetKey(KeyCode.R))
+            if (collision.CompareTag("Tomb"))
             {
-                Debug.Log("Reviving");
-                revive_time -= 1.0f * Time.deltaTime;
+                if (Input.GetKey(KeyCode.R))
+                {
+                    Debug.Log("Reviving");
+                    revive_time -= 1.0f * Time.deltaTime;
 
-            }
-            if (revive_time <= 0f)
-            {
-                collision.GetComponent<tomb>().revived();
-                revive_time = 2.0f;
+                }
+                if (revive_time <= 0f)
+                {
+                    collision.GetComponent<tomb>().Cmdrevived();
+                    revive_time = 2.0f;
+                }
             }
         }
     }

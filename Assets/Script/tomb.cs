@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class tomb : MonoBehaviour
+public class tomb : NetworkBehaviour
 {
     public GameObject Player;
     // Start is called before the first frame update
@@ -21,5 +22,16 @@ public class tomb : MonoBehaviour
     void Update()
     {
         
+    }
+    [Command]
+    public void Cmdrevived()
+    {
+        revived();
+        Rpcrevived();
+    }
+    [ClientRpc]
+    public void Rpcrevived()
+    {
+        revived();
     }
 }
