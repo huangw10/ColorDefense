@@ -1181,7 +1181,7 @@ GameObject:
   - component: {fileID: 888127609}
   m_Layer: 0
   m_Name: rec (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2763,7 +2763,7 @@ GameObject:
   - component: {fileID: 1781579724}
   m_Layer: 0
   m_Name: rec
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
