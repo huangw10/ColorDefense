@@ -85,12 +85,6 @@ public class Player : NetworkBehaviour
     }
 
     [Command]
-    void CmdTombini()
-    {
-        GameObject a = GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
-        NetworkServer.Spawn(a);
-    }
-    [Command]
     public void CmdDie()
     {
         if (tomb_status)
@@ -98,7 +92,8 @@ public class Player : NetworkBehaviour
 
             tomb_status = false;
             Debug.Log("Player died");
-            CmdTombini();
+            GameObject a = GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
+            NetworkServer.Spawn(a);
             is_alive = false;
             this.gameObject.SetActive(false);
             Rpcdie();
@@ -114,7 +109,7 @@ public class Player : NetworkBehaviour
 
             tomb_status = false;
             Debug.Log("Player died");
-            CmdTombini();
+            GameObject a = GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
             is_alive = false;
             this.gameObject.SetActive(false);
 
