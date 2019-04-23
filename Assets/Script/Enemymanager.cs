@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Networking;
 
-public class Enemymanager : MonoBehaviour
+public class Enemymanager : NetworkBehaviour
 {
     static public Enemymanager instance;
     public UnityEvent EnemyDied;
@@ -20,19 +21,16 @@ public class Enemymanager : MonoBehaviour
 
     void Start()
     {
+    }
+
+    public override void OnStartServer()
+    {
         EnemyPointCount = pointlist.Length;
         EnemyCount = EnemyPointCount * EnemyWave;
         EnemyDied.AddListener(Enemybeenkilled);
         IniEnemy();
     }
 
-    void IniEnemy()
-    {
-        for (int i = 0; i < EnemyPointCount; i++)
-        {
-            GameObject.Instantiate(Enemy_prefab, pointlist[i].transform.position, new Quaternion());
-        }
-    }
     void Enemybeenkilled()
     {
         EnemyCount--;
@@ -47,5 +45,17 @@ public class Enemymanager : MonoBehaviour
     void Update()
     {
         
+    }
+    
+    
+    void IniEnemy()
+    {
+        Debug.Log("a");
+        for (int i = 0; i < EnemyPointCount; i++)
+        {
+            GameObject a = GameObject.Instantiate(Enemy_prefab, pointlist[i].transform.position, new Quaternion());
+            NetworkServer.Spawn(a);
+            
+        }
     }
 }

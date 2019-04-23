@@ -57,7 +57,8 @@ public class EnemyMovement : MonoBehaviour
             is_walk = false;
        //     Vector3 a = target.transform.position - this.transform.position;
        //     e_rigid.velocity = new Vector3(a.y, a.x, a.z).normalized * speed * 3;
-            e_rigid.velocity = Quaternion.Euler(0f,0f,90f)* (target.transform.position - this.transform.position).normalized * speed * 3;
+            if(target != null)
+                 e_rigid.velocity = Quaternion.Euler(0f,0f,90f)* (target.transform.position - this.transform.position).normalized * speed * 3;
 
         }
     }
