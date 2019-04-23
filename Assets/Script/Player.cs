@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
     private bool is_alive = true;
     public GameObject tomb;
@@ -30,17 +31,6 @@ public class Player : MonoBehaviour
         tomb_status = true;
     }
 
-    public void die()
-    {
-        if (tomb_status)
-        {
-
-            tomb_status = false;
-            Debug.Log("Player died");
-            GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
-            this.gameObject.SetActive(false);
-        }
-    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Tomb"))
@@ -69,10 +59,13 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (isServer)
         {
-            //    been_killed();
-            die();
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                //    been_killed();
+                Rpcdie();
+            }
         }
     }
 
@@ -84,6 +77,29 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
 
+    }
+
+    [Command]
+    void CmdTombini()
+    {
+        GameObject a = GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
+        NetworkServer.Spawn(a);
+    }
+
+    [ClientRpc]
+    public void Rpcdie()
+    {
+        if (tomb_status)
+        {
+
+            tomb_status = false;
+            Debug.Log("Player died");
+            CmdTombini();
+            is_alive = false;
+            this.gameObject.SetActive(false);
+
+        }
     }
 }
