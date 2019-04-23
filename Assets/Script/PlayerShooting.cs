@@ -28,7 +28,7 @@ public class PlayerShooting : NetworkBehaviour
             }
             if (Input.GetMouseButtonUp(1))
             {
-                my_player.die();
+                my_player.CmdDie();
                 CmdShoot(Quaternion.Euler(0.0f, 0.0f, 0f));
                 CmdShoot(Quaternion.Euler(0.0f, 0.0f, 45f));
                 CmdShoot(Quaternion.Euler(0.0f, 0.0f, 90f));
@@ -42,6 +42,7 @@ public class PlayerShooting : NetworkBehaviour
         }
 
     }
+    
     [Command]
     public void CmdShoot(Quaternion a)
     {
