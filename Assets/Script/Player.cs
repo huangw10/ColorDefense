@@ -94,6 +94,7 @@ public class Player : NetworkBehaviour
             tomb_status = false;
             Debug.Log("Player died");
             GameObject a = GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
+            a.GetComponent<tomb>().Player = this.gameObject;
             NetworkServer.Spawn(a);
             is_alive = false;
             this.gameObject.SetActive(false);
@@ -111,6 +112,7 @@ public class Player : NetworkBehaviour
             tomb_status = false;
             Debug.Log("Player died");
             GameObject a = GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
+            a.GetComponent<tomb>().Player = this.gameObject;
             is_alive = false;
             this.gameObject.SetActive(false);
 
