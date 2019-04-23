@@ -12,11 +12,8 @@ public class PlayerMovement : NetworkBehaviour
 
     private void Awake()
     {
-        if (hasAuthority == false)
-        {
-            return;
-        }
         m_rigidbody = this.GetComponent<Rigidbody2D>();
+  
     }
     
   

@@ -19,7 +19,8 @@ public class PlayerNetwork : NetworkBehaviour
     public void CmdSpawnplayer()
     {
         GameObject player = Instantiate(playerobject);
-        NetworkServer.SpawnWithClientAuthority(player, connectionToClient);
+        NetworkServer.Spawn(player);
+        player.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
     }
     // Update is called once per frame
     void Update()
