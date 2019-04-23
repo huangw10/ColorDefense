@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class tomb : NetworkBehaviour
 {
-    public GameObject Player;
+    public GameObject m_player;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class tomb : NetworkBehaviour
     public void revived()
     {
         Debug.Log("aaaaa!");
-        Player.SetActive(true);
+        m_player.SetActive(true);
         Destroy(this.gameObject);
     }
     // Update is called once per frame
@@ -27,11 +27,12 @@ public class tomb : NetworkBehaviour
     public void Cmdrevived()
     {
         revived();
-        Rpcrevived();
+        Rpcrevived(m_player);
     }
     [ClientRpc]
-    public void Rpcrevived()
+    public void Rpcrevived(GameObject a)
     {
+        m_player = a;
         revived();
     }
 }
