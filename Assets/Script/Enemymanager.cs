@@ -55,6 +55,7 @@ public class Enemymanager : NetworkBehaviour
         {
             IniEnemy();
             ini_enemy = false;
+            timer = 0f;
         }
         
     }
