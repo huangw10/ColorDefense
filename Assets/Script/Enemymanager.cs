@@ -13,6 +13,9 @@ public class Enemymanager : NetworkBehaviour
     private int EnemyPointCount;
     public GameObject Enemy_prefab;
     public GameObject[] pointlist;
+    private bool ini_enemy=false;
+    [SerializeField] private float timer;
+    [SerializeField] private float betweenWave;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -28,7 +31,7 @@ public class Enemymanager : NetworkBehaviour
         EnemyPointCount = pointlist.Length;
         EnemyCount = EnemyPointCount * EnemyWave;
         EnemyDied.AddListener(Enemybeenkilled);
-        IniEnemy();
+        ini_enemy = true;
     }
 
     void Enemybeenkilled()
@@ -44,6 +47,15 @@ public class Enemymanager : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ini_enemy)
+        {
+            timer += Time.deltaTime;
+        }
+        if (timer >= 20)
+        {
+            IniEnemy();
+            ini_enemy = false;
+        }
         
     }
     

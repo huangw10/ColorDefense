@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26112e45329dfe14fbe5f2d6203ef7b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 335103713587189678, guid: a583150ab04d54a4a9292d259ad36fa4, type: 3}
+  bullet: {fileID: 7834836944190628449, guid: a300a82fee4e4b04c9936336f9eb080b, type: 3}
 --- !u!114 &6019396745766363899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 631575aa4b802a445bab5bd0331d2e34, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.1254902, b: 0.1254902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

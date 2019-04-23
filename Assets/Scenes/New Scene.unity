@@ -155,6 +155,8 @@ MonoBehaviour:
   - {fileID: 1351291458}
   - {fileID: 1093470766}
   - {fileID: 356226011}
+  timer: 20
+  betweenWave: 0
 --- !u!4 &29528500
 Transform:
   m_ObjectHideFlags: 0
@@ -874,7 +876,7 @@ MonoBehaviour:
   - {fileID: 8456165130119241061, guid: 70594913492b23144b5e06a7bca4b8ef, type: 3}
   - {fileID: 4506355733019769102, guid: 007de5691c9b7484daede5dc42c7f481, type: 3}
   - {fileID: 8835165421156095325, guid: 134cfce09ea102c4d803454f7bbba7a0, type: 3}
-  m_CustomConfig: 0
+  m_CustomConfig: 1
   m_MaxConnections: 4
   m_ConnectionConfig:
     m_PacketSize: 1440
@@ -916,7 +918,7 @@ MonoBehaviour:
     m_MaxTimerTimeout: 12000
     m_MinNetSimulatorTimeout: 1
     m_MaxNetSimulatorTimeout: 12000
-  m_Channels: 
+  m_Channels: 0500000000000000
   m_UseWebSockets: 0
   m_UseSimulator: 0
   m_SimulatedLatency: 1

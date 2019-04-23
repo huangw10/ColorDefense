@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : NetworkBehaviour
 {
     [SerializeField] private float speed;
     private GameObject target;
@@ -10,6 +11,7 @@ public class EnemyMovement : MonoBehaviour
     private bool is_walk = true;
     private float avoid_time_count = 0f;
     public int identity;
+    private Color[] colorlist= { Color.blue, Color.red, Color.green, Color.yellow} ;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -18,6 +20,9 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
+        int num = NetworkManager.singleton.numPlayers;
+        identity = Random.Range(1, num + 1);
+        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = colorlist[identity-1];
     }
 
     GameObject decide_whotofollow(GameObject[] player_list)

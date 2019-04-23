@@ -18,7 +18,7 @@ public class PlayerNetwork : NetworkBehaviour
     [Command]
     public void CmdSpawnplayer()
     {
-        int a = NetworkServer.connections.Count;//?????
+        int a = NetworkManager.singleton.numPlayers;//?????
         GameObject player = Instantiate(playerobject[a-1]);//??????
         NetworkServer.Spawn(player);
         player.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
