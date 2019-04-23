@@ -7,7 +7,6 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float speed;
     private GameObject target;
     private Rigidbody2D e_rigid;
-    private GameObject[] player_list;
     private bool is_walk = true;
     private float avoid_time_count = 0f;
     // Start is called before the first frame update
@@ -18,7 +17,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
-        player_list = Game_manager.instance.playerlist;
     }
 
     GameObject decide_whotofollow(GameObject[] player_list)
@@ -66,7 +64,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        target = decide_whotofollow(player_list);
+        target = decide_whotofollow(Game_manager.instance.playerlist);
         if (target != null && is_walk)
         { FollowTarget(target); }
         else if (target != null && !is_walk)

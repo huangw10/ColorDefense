@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Networking;
 
-public class Game_manager : MonoBehaviour
+public class Game_manager : NetworkBehaviour
 {
     // Start is called before the first frame update
     public UnityEvent revive;
@@ -26,14 +27,14 @@ public class Game_manager : MonoBehaviour
     }
     void Start()
     {
-        playerlist = GameObject.FindGameObjectsWithTag("Player");
 
         
     }
 
     // Update is called once per frame
+    
     void Update()
     {
-        
+        playerlist = GameObject.FindGameObjectsWithTag("Player");
     }
 }
