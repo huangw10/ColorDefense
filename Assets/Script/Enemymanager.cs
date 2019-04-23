@@ -64,11 +64,14 @@ public class Enemymanager : NetworkBehaviour
     void IniEnemy()
     {
         Debug.Log("a");
-        for (int i = 0; i < EnemyPointCount; i++)
+        for (int j = 0; j < EnemyWave; j++)
         {
-            GameObject a = GameObject.Instantiate(Enemy_prefab, pointlist[i].transform.position, new Quaternion());
-            NetworkServer.Spawn(a);
-            
+            for (int i = 0; i < EnemyPointCount; i++)
+            {
+                GameObject a = GameObject.Instantiate(Enemy_prefab, pointlist[i].transform.position, new Quaternion());
+                NetworkServer.Spawn(a);
+
+            }
         }
     }
 }
