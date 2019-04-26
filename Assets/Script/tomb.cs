@@ -16,6 +16,7 @@ public class tomb : NetworkBehaviour
     {
         Debug.Log("aaaaa!");
         m_player.SetActive(true);
+        m_player.GetComponent<Player>().tomb_status = true;
         Destroy(this.gameObject);
     }
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class tomb : NetworkBehaviour
     {
         
     }
+
     [Command]
     public void Cmdrevived()
     {

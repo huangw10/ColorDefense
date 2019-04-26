@@ -7,7 +7,7 @@ public class Player : NetworkBehaviour
 {
     private bool is_alive = true;
     public GameObject tomb;
-    private bool tomb_status = true;
+    public bool tomb_status = true;
     private bool revive_people = false;
     [SerializeField] float revive_time = 2.0f;
 
@@ -48,7 +48,9 @@ public class Player : NetworkBehaviour
                 //              collision.GetComponent<tomb>().Cmdrevived();
                 //               revive_time = 2.0f;
                 //   }
+                collision.GetComponent<tomb>().m_player.GetComponent<Player>().tomb_status = true;
                 collision.GetComponent<tomb>().Cmdrevived();
+                Destroy(collision.gameObject);
             }
         }
     }
