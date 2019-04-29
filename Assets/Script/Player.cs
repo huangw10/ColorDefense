@@ -33,7 +33,7 @@ public class Player : NetworkBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (hasAuthority)
+        if (isServer)
         {
             if (collision.CompareTag("Tomb"))
             {
