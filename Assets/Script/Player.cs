@@ -100,7 +100,7 @@ public class Player : NetworkBehaviour
             a.GetComponent<tomb>().m_player = this.gameObject;
             is_alive = false;
             this.gameObject.SetActive(false);
-            Rpcdie();
+            
 
         }
     }
