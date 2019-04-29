@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5515574191108888948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0529499, y: 1.6906111, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8745075612124613099}
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tomb: {fileID: 8835165421156095325, guid: 134cfce09ea102c4d803454f7bbba7a0, type: 3}
+  tomb_status: 1
   revive_time: 2
 --- !u!114 &3824195425186134543
 MonoBehaviour:
