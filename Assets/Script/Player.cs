@@ -96,8 +96,8 @@ public class Player : NetworkBehaviour
             tomb_status = false;
             Debug.Log("Player died");
             GameObject a = GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
-            NetworkServer.Spawn(a);
             a.GetComponent<tomb>().m_player = this.gameObject;
+            NetworkServer.Spawn(a);
             is_alive = false;
             this.gameObject.SetActive(false);
             
