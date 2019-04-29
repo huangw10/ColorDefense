@@ -70,7 +70,7 @@ public class Player : NetworkBehaviour
             if (collision.gameObject.CompareTag("Enemy"))
             {
                 //    been_killed();
-                Rpcdie();
+                CmdDie();
             }
         }
     }
@@ -100,20 +100,20 @@ public class Player : NetworkBehaviour
             NetworkServer.Spawn(a);
             is_alive = false;
             this.gameObject.SetActive(false);
+            Rpcdie(a);
             
 
         }
     }
 
     [ClientRpc]
-    public void Rpcdie()
+    public void Rpcdie(GameObject a)
     {
         if (tomb_status)
         {
 
             tomb_status = false;
             Debug.Log("Player died");
-            GameObject a = GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
             a.GetComponent<tomb>().m_player = this.gameObject;
             is_alive = false;
             this.gameObject.SetActive(false);
