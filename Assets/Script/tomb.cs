@@ -13,8 +13,8 @@ public class tomb : NetworkBehaviour
         num_tomb += 1;
         if (num_tomb == NetworkManager.singleton.numPlayers)
         {
-            Time.timeScale = 0.0f;
-            Enemymanager.instance.panel.SetActive(true);
+            if(isServer)
+            RpcEndgame1();
         }
     }
 
@@ -43,5 +43,11 @@ public class tomb : NetworkBehaviour
     {
         m_player = a;
         revived();
+    }
+    [ClientRpc]
+    public void RpcEndgame1()
+    {
+        Time.timeScale = 0.0f;
+        Enemymanager.instance.panel.SetActive(true);
     }
 }

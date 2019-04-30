@@ -41,8 +41,8 @@ public class Enemymanager : NetworkBehaviour
         Debug.Log(EnemyCount);
         if (EnemyCount == 0)
         {
-            Time.timeScale = 0.0f;
-            panel.SetActive(true);
+            if(isServer)
+            RpcEndgame();
         }
     }
 
@@ -79,6 +79,12 @@ public class Enemymanager : NetworkBehaviour
             }
             yield return new WaitForSeconds(betweenWave);
         }
+    }
+    [ClientRpc]
+    void RpcEndgame()
+    {
+        Time.timeScale = 0.0f;
+        panel.SetActive(true);
     }
     
 }
