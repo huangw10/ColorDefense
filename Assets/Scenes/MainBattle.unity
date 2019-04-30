@@ -4869,6 +4869,18 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   Revive_Clip: {fileID: 8300000, guid: 17554e18bda0c3240befa0e8d6fd4089, type: 3}
+  Death_Clip: {fileID: 8300000, guid: 51f4250df246e374db86baa0452f7cec, type: 3}
+  BGMusic: {fileID: 8300000, guid: 4a207f2aced20604ea8ad79b2bece8b6, type: 3}
+  Death_Event:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  StartBGM:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   low: 0.95
   high: 1.05
 --- !u!82 &1942849867

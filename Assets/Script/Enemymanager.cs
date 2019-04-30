@@ -30,6 +30,7 @@ public class Enemymanager : NetworkBehaviour
 
     public override void OnStartServer()
     {
+        SoundManager.instance.StartBGM.Invoke();
         EnemyPointCount = pointlist.Length;
         EnemyCount = EnemyPointCount * EnemyWave;
         EnemyDied.AddListener(Enemybeenkilled);

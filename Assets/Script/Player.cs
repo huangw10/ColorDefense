@@ -93,6 +93,7 @@ public class Player : NetworkBehaviour
         if (tomb_status)
         {
 
+            SoundManager.instance.Death_Event.Invoke();
             tomb_status = false;
             Debug.Log("Player died");
             GameObject a = GameObject.Instantiate(tomb, this.transform.position, new Quaternion());
@@ -111,7 +112,7 @@ public class Player : NetworkBehaviour
     {
         if (tomb_status)
         {
-
+            SoundManager.instance.Death_Event.Invoke();
             tomb_status = false;
             Debug.Log("Player died");
             a.GetComponent<tomb>().m_player = this.gameObject;

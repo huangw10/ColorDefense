@@ -14,6 +14,10 @@ public class SoundManager : MonoBehaviour
     public AudioClip Shotting_Clip;
     public UnityEvent ReviveEvent;
     public AudioClip Revive_Clip;
+    public AudioClip Death_Clip;
+    public AudioClip BGMusic;
+    public UnityEvent Death_Event;
+    public UnityEvent StartBGM;
 
     public float low = 0.95f;
     public float high = 1.05f;
@@ -30,6 +34,12 @@ public class SoundManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+    public void PlayBGM()
+    {
+        musicSource.Play();
+    }
+
+
     public void PlaySingle(AudioClip clip)
     {
         efSource.clip = clip;
@@ -41,6 +51,13 @@ public class SoundManager : MonoBehaviour
         Enemymanager.instance.EnemyDied.AddListener(playDieofEnemy);
         this.shotting.AddListener(playShot);
         this.ReviveEvent.AddListener(playRevive);
+        this.Death_Event.AddListener(PlayHLS);
+        this.StartBGM.AddListener(PlayBGM);
+        musicSource.clip = BGMusic;
+    }
+    public void PlayHLS()
+    {
+        PlaySingle(Death_Clip);
     }
 
     public void playRevive()
