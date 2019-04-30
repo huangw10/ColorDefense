@@ -11,6 +11,7 @@ public class Enemymanager : NetworkBehaviour
     [SerializeField] private int EnemyWave;
     private int EnemyCount;
     private int EnemyPointCount;
+    public GameObject panel;
     public GameObject Enemy_prefab;
     public GameObject[] pointlist;
     private bool ini_enemy=false;
@@ -41,6 +42,7 @@ public class Enemymanager : NetworkBehaviour
         if (EnemyCount == 0)
         {
             Time.timeScale = 0.0f;
+            panel.SetActive(true);
         }
     }
 

@@ -6,10 +6,16 @@ using UnityEngine.Networking;
 public class tomb : NetworkBehaviour
 {
     public GameObject m_player;
+    static public int num_tomb = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        num_tomb += 1;
+        if (num_tomb == NetworkManager.singleton.numPlayers)
+        {
+            Time.timeScale = 0.0f;
+            Enemymanager.instance.panel.SetActive(true);
+        }
     }
 
     public void revived()
@@ -17,6 +23,7 @@ public class tomb : NetworkBehaviour
         Debug.Log("aaaaa!");
         m_player.SetActive(true);
         m_player.GetComponent<Player>().tomb_status = true;
+        num_tomb -= 1;
         Destroy(this.gameObject);
     }
     // Update is called once per frame
