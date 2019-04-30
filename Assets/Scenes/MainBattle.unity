@@ -4868,7 +4868,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  Revive_Clip: {fileID: 8300000, guid: 17554e18bda0c3240befa0e8d6fd4089, type: 3}
+  Revive_Clip: {fileID: 8300000, guid: 024a06d60b7fe3f4da6b31d2b59677af, type: 3}
   Death_Clip: {fileID: 8300000, guid: 51f4250df246e374db86baa0452f7cec, type: 3}
   BGMusic: {fileID: 8300000, guid: b184828e814f9a84a86b538f45f924f3, type: 3}
   Death_Event:
