@@ -37,10 +37,10 @@ public class Enemymanager : NetworkBehaviour
     void Enemybeenkilled()
     {
         EnemyCount--;
-        Debug.Log("Nice Shot");
+        Debug.Log(EnemyCount);
         if (EnemyCount == 0)
         {
-            Debug.Log("You Won");
+            CmdEnd();
         }
     }
 
@@ -78,4 +78,17 @@ public class Enemymanager : NetworkBehaviour
             yield return new WaitForSeconds(betweenWave);
         }
     }
+    [Command]
+    void CmdEnd()
+    {
+        Time.timeScale = 0.0f;
+        Debug.Log("game stop");
+
+    }
+    [ClientRpc]
+    void RpcEnd()
+    {
+        Time.timeScale = 0.0f;
+    }
+
 }
