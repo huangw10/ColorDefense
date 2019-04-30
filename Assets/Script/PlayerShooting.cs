@@ -47,7 +47,13 @@ public class PlayerShooting : NetworkBehaviour
     public void CmdShoot(Quaternion a)
     {
         SoundManager.instance.shotting.Invoke();
+        RpcShotting();
         GameObject x = GameObject.Instantiate(bullet, this.transform.position, a);
         NetworkServer.Spawn(x);
+    }
+    [ClientRpc]
+    public void RpcShotting()
+    {
+        SoundManager.instance.shotting.Invoke();
     }
 }

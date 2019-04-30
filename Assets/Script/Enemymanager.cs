@@ -31,6 +31,7 @@ public class Enemymanager : NetworkBehaviour
     public override void OnStartServer()
     {
         SoundManager.instance.StartBGM.Invoke();
+        RpcStartBGM();
         EnemyPointCount = pointlist.Length;
         EnemyCount = EnemyPointCount * EnemyWave;
         EnemyDied.AddListener(Enemybeenkilled);
@@ -74,6 +75,7 @@ public class Enemymanager : NetworkBehaviour
     private IEnumerator GenerateAllEnemies() {
         for (int j = 0; j < EnemyWave; j++) {
             EnemySpawn.Invoke();
+            RpcStartSpawn();
             for (int i = 0; i < EnemyPointCount; i++)
             {
                 GameObject a = GameObject.Instantiate(Enemy_prefab, pointlist[i].transform.position, new Quaternion());
@@ -88,6 +90,16 @@ public class Enemymanager : NetworkBehaviour
     {
         Time.timeScale = 0.0f;
         panel.SetActive(true);
+    }
+    [ClientRpc]
+    void RpcStartBGM()
+    {
+        SoundManager.instance.StartBGM.Invoke();
+    }
+    [ClientRpc]
+    void RpcStartSpawn()
+    {
+        EnemySpawn.Invoke();
     }
     
 }
