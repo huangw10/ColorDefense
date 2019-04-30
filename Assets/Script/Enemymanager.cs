@@ -31,7 +31,6 @@ public class Enemymanager : NetworkBehaviour
     public override void OnStartServer()
     {
         SoundManager.instance.StartBGM.Invoke();
-        CmdStartBGM();
         EnemyPointCount = pointlist.Length;
         EnemyCount = EnemyPointCount * EnemyWave;
         EnemyDied.AddListener(Enemybeenkilled);
@@ -90,15 +89,6 @@ public class Enemymanager : NetworkBehaviour
     {
         Time.timeScale = 0.0f;
         panel.SetActive(true);
-    }
-    [Command]
-    void CmdStartBGM()
-    { SoundManager.instance.StartBGM.Invoke();
-        RpcStartBGM(); }
-    [ClientRpc]
-    void RpcStartBGM()
-    {
-        SoundManager.instance.StartBGM.Invoke();
     }
     [ClientRpc]
     void RpcStartSpawn()
