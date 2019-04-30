@@ -8,6 +8,7 @@ public class Enemymanager : NetworkBehaviour
 {
     static public Enemymanager instance;
     public UnityEvent EnemyDied;
+    public UnityEvent EnemySpawn;
     [SerializeField] private int EnemyWave;
     private int EnemyCount;
     private int EnemyPointCount;
@@ -71,6 +72,7 @@ public class Enemymanager : NetworkBehaviour
 
     private IEnumerator GenerateAllEnemies() {
         for (int j = 0; j < EnemyWave; j++) {
+            EnemySpawn.Invoke();
             for (int i = 0; i < EnemyPointCount; i++)
             {
                 GameObject a = GameObject.Instantiate(Enemy_prefab, pointlist[i].transform.position, new Quaternion());

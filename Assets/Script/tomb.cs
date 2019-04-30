@@ -20,6 +20,7 @@ public class tomb : NetworkBehaviour
 
     public void revived()
     {
+        SoundManager.instance.ReviveEvent.Invoke();
         Debug.Log("aaaaa!");
         m_player.SetActive(true);
         m_player.GetComponent<Player>().tomb_status = true;

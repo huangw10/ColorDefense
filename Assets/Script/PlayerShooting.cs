@@ -46,6 +46,7 @@ public class PlayerShooting : NetworkBehaviour
     [Command]
     public void CmdShoot(Quaternion a)
     {
+        SoundManager.instance.shotting.Invoke();
         GameObject x = GameObject.Instantiate(bullet, this.transform.position, a);
         NetworkServer.Spawn(x);
     }
