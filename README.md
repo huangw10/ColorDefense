@@ -23,4 +23,5 @@ One of the player should be the host for this game. When the player who wants to
 - Players can revive their teammates.
 - When all the monsters got killed, players win, monster lose. 
 - When all the players got killed, monster win, player lose.
+- If the player shoot the color which is different with their color, the bullet will disappear and won't do anything. 
 
