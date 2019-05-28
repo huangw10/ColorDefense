@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 public class Attacker : NetworkBehaviour
 {
     public GameObject related_Player;
+    [SerializeField] string newtag;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,7 @@ public class Attacker : NetworkBehaviour
         // Update is called once per frame
         void Update()
     {
-        related_Player = GameObject.FindWithTag("xyz");
+        related_Player = GameObject.FindWithTag(newtag);
         if (related_Player != null)
         this.transform.position = new Vector3(this.transform.position.x, related_Player.transform.position.y, 0); 
     }
