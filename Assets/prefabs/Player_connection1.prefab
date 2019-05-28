@@ -79,5 +79,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerobject: {fileID: 7476508982880538215, guid: 2fc0c191418b4d24b8fd62fdc708a540,
     type: 3}
-  Shooterobject: {fileID: 693687358028634531, guid: ad6d5dcd9599bee4295278cd0afe2b5f,
+  playerobject2: {fileID: 6954602096761668748, guid: 7901f32e60aee034d9d410371335ba1e,
     type: 3}
