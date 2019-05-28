@@ -31,6 +31,8 @@ public class Player_Shooting_competitive : NetworkBehaviour
                 CmdShoot();
             }
         }
+        else
+            Debug.Log("cannot find tag");
     }
 
     [Command]
