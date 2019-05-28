@@ -18,12 +18,12 @@ public class Player_Shooting_competitive : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        attacker = GameObject.FindWithTag(newtag);
         if (hasAuthority == false)
         {
             return;
         }
 
-        attacker = GameObject.FindWithTag(newtag);
         if (attacker != null)
         {
             if (Input.GetKeyDown(KeyCode.Space))
