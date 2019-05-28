@@ -38,7 +38,7 @@ public class Player_Shooting_competitive : NetworkBehaviour
     [Command]
     public void CmdShoot()
     {
-        GameObject x = GameObject.Instantiate(balls, new Vector3(attacker.transform.position.x + adder, attacker.transform.position.y, 0), new Quaternion());
+        GameObject x = GameObject.Instantiate(balls, new Vector3(attacker.transform.position.x + adder, this.transform.position.y, 0), new Quaternion());
         NetworkServer.Spawn(x);
     }
 }
