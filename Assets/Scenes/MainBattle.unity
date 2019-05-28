@@ -4856,22 +4856,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   efSource: {fileID: 1942849865}
   musicSource: {fileID: 1942849867}
-  SpawningAudio: {fileID: 8300000, guid: 85a8ce23181559b41ab9fe6957dda98a, type: 3}
-  e_die: {fileID: 8300000, guid: 4aa484bf8c6518d4d90b334d58feb40c, type: 3}
+  SpawningAudio: {fileID: 8300000, guid: d6fa340538fe69247be2990a5f5127a5, type: 3}
+  e_die: {fileID: 8300000, guid: 3de0c0309c519b9478ee62f219b01270, type: 3}
   shotting:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  Shotting_Clip: {fileID: 8300000, guid: b02ac12c0f66e0149b78580f8404d290, type: 3}
+  Shotting_Clip: {fileID: 8300000, guid: 4e563b3a02a83fc4e884bbdc67275959, type: 3}
   ReviveEvent:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  Revive_Clip: {fileID: 8300000, guid: 024a06d60b7fe3f4da6b31d2b59677af, type: 3}
-  Death_Clip: {fileID: 8300000, guid: 51f4250df246e374db86baa0452f7cec, type: 3}
-  BGMusic: {fileID: 8300000, guid: b184828e814f9a84a86b538f45f924f3, type: 3}
+  Revive_Clip: {fileID: 8300000, guid: 03722e3e5d1e40b46bd381d71650b302, type: 3}
+  Death_Clip: {fileID: 8300000, guid: c07981498d94b3a4c811b3cee7a6f9db, type: 3}
+  BGMusic: {fileID: 8300000, guid: 1dd8cac281faa494999723a8a961319e, type: 3}
   Death_Event:
     m_PersistentCalls:
       m_Calls: []
