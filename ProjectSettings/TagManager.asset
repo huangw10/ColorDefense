@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - xyz
   - Tomb
+  - Attacker1
   layers:
   - Default
   - TransparentFX

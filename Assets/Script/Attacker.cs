@@ -14,6 +14,7 @@ public class Attacker : NetworkBehaviour
         void Update()
     {
         related_Player = GameObject.FindWithTag("xyz");
+        if (related_Player != null)
         this.transform.position = new Vector3(this.transform.position.x, related_Player.transform.position.y, 0); 
     }
 }
