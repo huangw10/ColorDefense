@@ -11,6 +11,8 @@ TagManager:
   - Attacker1
   - Attacker2
   - Player1+
+  - Attacker3
+  - Attacker4
   layers:
   - Default
   - TransparentFX

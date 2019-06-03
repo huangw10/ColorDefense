@@ -176,7 +176,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attacker: {fileID: 0}
   balls: {fileID: 7124831301592865137, guid: 7de3a8695783ece4baea4cbaac7ee301, type: 3}
+  attacker2: {fileID: 0}
   newtag: Attacker1
+  newtag2: Attacker4
   adder: 0.5
 --- !u!50 &7112936099508029590
 Rigidbody2D:

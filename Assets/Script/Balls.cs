@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 public class Balls : NetworkBehaviour
 {
     [SerializeField] private float speed;
+    public bool ish = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +41,10 @@ public class Balls : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = new Vector3(this.transform.position.x + speed * Time.deltaTime, this.transform.position.y, 0);
+        if (ish)
+            this.transform.position = new Vector3(this.transform.position.x + speed * Time.deltaTime, this.transform.position.y, 0);
+        else
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + speed * Time.deltaTime, 0);
     }
 
 }
