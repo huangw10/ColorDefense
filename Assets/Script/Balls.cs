@@ -1,15 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Balls : MonoBehaviour
+public class Balls : NetworkBehaviour
 {
     [SerializeField] private float speed;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Competitive_gamemanager.instance.rightwin.AddListener(dest);
+        Competitive_gamemanager.instance.leftwin.AddListener(dest);
     }
+
+    public void dest()
+    {
+        Destroy(this);
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,6 +25,17 @@ public class Balls : MonoBehaviour
         {
             speed = -speed;
         }
+        
+        if (collision.CompareTag("Player") )
+        {
+            Competitive_gamemanager.instance.rightwin.Invoke();
+        }
+
+        if (collision.CompareTag("Player1+"))
+        {
+            Competitive_gamemanager.instance.leftwin.Invoke();
+        }
+
     }
     // Update is called once per frame
     void Update()
