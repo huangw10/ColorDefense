@@ -32,10 +32,10 @@ public class Player_Shooting_competitive : NetworkBehaviour
             return;
         }
 
+        CmdUpdate();
         timer -= Time.deltaTime;
         if(timer > 0f) return;
         spriteRenderer.color = Color.red;
-        CmdUpdate();
 
         if (attacker != null)
         {
