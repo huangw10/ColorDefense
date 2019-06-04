@@ -8,6 +8,7 @@ public class Player_Shooting_competitive : NetworkBehaviour
     // Start is called before the first frame update
     public GameObject attacker;
     public GameObject balls;
+    public GameObject ball2;
     public GameObject attacker2;
     public float coolDownTime = 3f;
     [SerializeField] string newtag;
@@ -61,12 +62,10 @@ public class Player_Shooting_competitive : NetworkBehaviour
         if (num == 1)
         {
             x = GameObject.Instantiate(balls, new Vector3(attacker.transform.position.x + adder, attacker.transform.position.y, 0), new Quaternion());
-            x.GetComponent<Balls>().ish = true;
         }
         else
         {
-            x = GameObject.Instantiate(balls, new Vector3(attacker2.transform.position.x, attacker2.transform.position.y, 0), new Quaternion());
-            x.GetComponent<Balls>().ish = false;
+            x = GameObject.Instantiate(ball2, new Vector3(attacker2.transform.position.x, attacker2.transform.position.y, 0), new Quaternion());
         }
         NetworkServer.Spawn(x);
     }
