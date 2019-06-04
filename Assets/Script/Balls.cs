@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class Balls : NetworkBehaviour
 {
     [SerializeField] private float speed;
-    public bool ish = true;
+    public bool ish;
     // Start is called before the first frame update
     void Start()
     {

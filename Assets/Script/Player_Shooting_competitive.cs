@@ -29,14 +29,14 @@ public class Player_Shooting_competitive : NetworkBehaviour
 
         if (attacker != null)
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.J))
             {
                 CmdShoot(1);
             }
         }
         if (attacker2 != null)
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.K))
             {
                 CmdShoot(2);
             }
