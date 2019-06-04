@@ -57,6 +57,7 @@ public class Player_Shooting_competitive : NetworkBehaviour
 
     [Command]
     public void CmdUpdate() {
+        timer -= Time.deltaTime;
         if(timer > 0f) return;
         spriteRenderer.color = Color.red;
     }
