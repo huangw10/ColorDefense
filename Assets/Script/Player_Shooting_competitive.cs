@@ -55,6 +55,11 @@ public class Player_Shooting_competitive : NetworkBehaviour
     }
 
     [Command]
+    public void CmdUpdate() {
+        spriteRenderer.color = Color.red;
+    }
+
+    [Command]
     public void CmdShoot(int num) {
         RpcShoot();
         GameObject x;
