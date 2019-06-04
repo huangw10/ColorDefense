@@ -9,12 +9,16 @@ public class Player_Shooting_competitive : NetworkBehaviour
     public GameObject attacker;
     public GameObject balls;
     public GameObject attacker2;
+    public float coolDownTime = 3f;
     [SerializeField] string newtag;
     [SerializeField] string newtag2;
     [SerializeField] float adder;
-    void Start()
-    {
-        
+    private SpriteRenderer spriteRenderer;
+    private float timer;
+    void Start() {
+        timer = 0f;
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer.color = Color.red;
     }
 
     // Update is called once per frame
@@ -26,6 +30,10 @@ public class Player_Shooting_competitive : NetworkBehaviour
         {
             return;
         }
+
+        timer -= Time.deltaTime;
+        if(timer > 0f) return;
+        spriteRenderer.color = Color.red;
 
         if (attacker != null)
         {
@@ -46,8 +54,9 @@ public class Player_Shooting_competitive : NetworkBehaviour
     }
 
     [Command]
-    public void CmdShoot(int num)
-    {
+    public void CmdShoot(int num) {
+        timer = coolDownTime;
+        spriteRenderer.color = Color.white;
         GameObject x;
         if (num == 1)
         {
