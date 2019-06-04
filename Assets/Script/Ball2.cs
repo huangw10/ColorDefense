@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class Balls : NetworkBehaviour
+public class Ball2 : MonoBehaviour
 {
+    // Start is called before the first frame update
     [SerializeField] private float speed;
     // Start is called before the first frame update
     void Start()
@@ -25,8 +25,8 @@ public class Balls : NetworkBehaviour
         {
             speed = -speed;
         }
-        
-        if (collision.CompareTag("Player") )
+
+        if (collision.CompareTag("Player"))
         {
             Competitive_gamemanager.instance.rightwin.Invoke();
         }
@@ -40,8 +40,7 @@ public class Balls : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = new Vector3(this.transform.position.x + speed * Time.deltaTime, this.transform.position.y, 0);
-       
-    }
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + speed * Time.deltaTime, 0);
 
+    }
 }
