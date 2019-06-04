@@ -56,8 +56,7 @@ public class Player_Shooting_competitive : NetworkBehaviour
 
     [Command]
     public void CmdShoot(int num) {
-        timer = coolDownTime;
-        spriteRenderer.color = Color.white;
+        RpcShoot();
         GameObject x;
         if (num == 1)
         {
@@ -68,6 +67,12 @@ public class Player_Shooting_competitive : NetworkBehaviour
             x = GameObject.Instantiate(ball2, new Vector3(attacker2.transform.position.x, attacker2.transform.position.y, 0), new Quaternion());
         }
         NetworkServer.Spawn(x);
+    }
+
+    [ClientRpc]
+    public void RpcShoot() {
+        timer = coolDownTime;
+        spriteRenderer.color = Color.white;
     }
 
 }
