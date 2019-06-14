@@ -9,6 +9,10 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("MainBattle");
     }
 
+    public void StartComGame() {
+        SceneManager.LoadScene("Competitive");
+    }
+
     public void ExitGame() {
         Application.Quit();
     }

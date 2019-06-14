@@ -9,13 +9,6 @@ public class Balls : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Competitive_gamemanager.instance.rightwin.AddListener(dest);
-        Competitive_gamemanager.instance.leftwin.AddListener(dest);
-    }
-
-    public void dest()
-    {
-        Destroy(this);
     }
 
 

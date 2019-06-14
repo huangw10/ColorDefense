@@ -8,18 +8,25 @@ public class Competitive_gamemanager : MonoBehaviour
     public UnityEvent leftwin;
     public UnityEvent rightwin;
     static public Competitive_gamemanager instance;
-    public GameObject penal;
+    public GameObject lpenal;
+    public GameObject rpenal;
     // Start is called before the first frame update
     private void Awake()
     {
         instance = this;
-        leftwin.AddListener(endofgame);
-        rightwin.AddListener(endofgame);
+        leftwin.AddListener(endofgamel);
+        rightwin.AddListener(endofgamer);
     }
 
-    void endofgame()
+    void endofgamel()
     {
-        penal.SetActive(true);
+        lpenal.SetActive(true);
+        Time.timeScale = 0.0f;
+    }
+
+    void endofgamer()
+    {
+        rpenal.SetActive(true);
         Time.timeScale = 0.0f;
     }
     void Start()

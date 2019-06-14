@@ -9,14 +9,9 @@ public class Ball2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Competitive_gamemanager.instance.rightwin.AddListener(dest);
-        Competitive_gamemanager.instance.leftwin.AddListener(dest);
+        
     }
 
-    public void dest()
-    {
-        Destroy(this);
-    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)

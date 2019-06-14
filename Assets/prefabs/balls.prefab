@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2116951899291588960}
   m_Layer: 0
   m_Name: balls
-  m_TagString: Untagged
+  m_TagString: ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,7 +183,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  ish: 1
 --- !u!58 &761704553984465076
 CircleCollider2D:
   m_ObjectHideFlags: 0
