@@ -80,7 +80,7 @@ public class Player_Shooting_competitive : NetworkBehaviour
         }
         else
         {
-            x = GameObject.Instantiate(ball2, new Vector3(attacker2.transform.position.x, attacker2.transform.position.y, 0), new Quaternion());
+            x = GameObject.Instantiate(ball2, new Vector3(attacker2.transform.position.x, attacker2.transform.position.y - 0.5f, 0), new Quaternion());
         }
         NetworkServer.Spawn(x);
     }

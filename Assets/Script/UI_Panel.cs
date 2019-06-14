@@ -20,6 +20,14 @@ public class UI_Panel : MonoBehaviour
         tomb.num_tomb = 0;
     }
 
+    public void RestartCompetitive()
+    {
+        NetworkManager.Shutdown();
+        SceneManager.LoadScene("Competitive");
+        Time.timeScale = 1.0f;
+        tomb.num_tomb = 0;
+    }
+
     public void Quitgame()
     {
         Application.Quit();

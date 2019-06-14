@@ -20,6 +20,7 @@ public class Competitive_gamemanager : MonoBehaviour
     void endofgame()
     {
         penal.SetActive(true);
+        Time.timeScale = 0.0f;
     }
     void Start()
     {
